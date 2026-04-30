@@ -1,0 +1,308 @@
+// Datapoolwaters Advisory — case study data (verbatim from client copy)
+
+export const CATEGORIES = [
+  { id: "fundraising", label: "Fundraising & Investment Advisory" },
+  { id: "ppp", label: "Infrastructure, PPP & Public Sector" },
+  { id: "energy", label: "Power & Renewable Energy" },
+  { id: "climate", label: "Climate & Circular Economy" },
+  { id: "maritime", label: "Maritime & Offshore" },
+  { id: "aviation", label: "Aviation & Logistics" },
+];
+
+export const CASE_STUDIES = [
+  {
+    slug: "arnergy-series-a",
+    category: "fundraising",
+    pillar: "Capital & Fundraising Advisory",
+    title: "Arnergy – Scaling Clean Energy Access in Nigeria",
+    tag: "Distributed Renewable Energy · VC / Climate Capital",
+    size: "Series A · ~$9m",
+    image:
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80&fit=crop",
+    what: "Served as end-to-end transaction and investment advisor on Arnergy’s $9 million Series A raise. Our mandate covered investment readiness assessment, financial model refinement, valuation analysis, investor targeting strategy, data room preparation, due diligence coordination, and negotiation support with global climate-focused investors including Breakthrough Energy Ventures, All On, ElectriFI, and Norfund. We worked closely with management to align capital structure, governance, and growth projections with institutional investor expectations.",
+    outcome: [
+      "Successfully mobilized growth capital from leading global climate funds",
+      "Strengthened balance sheet to support nationwide expansion",
+      "Institutionalized financial reporting and investor governance processes",
+      "Expanded distributed solar portfolio beyond 6.5MW serving commercial clients",
+    ],
+    impact: [
+      "Displaced diesel generation across SMEs and institutions",
+      "Avoided an estimated 8,500+ tonnes of CO₂e annually",
+      "Improved energy reliability for healthcare facilities, schools, agro-processors, and financial institutions",
+      "Advanced Nigeria’s off-grid renewable energy transition",
+    ],
+  },
+  {
+    slug: "agroeknor-growth",
+    category: "fundraising",
+    pillar: "Capital & Fundraising Advisory",
+    title: "AgroEknor – Growth Capital & Export Market Expansion",
+    tag: "Agriculture & Exports · Gender-Lens Capital",
+    size: "Growth Equity · ~$1m",
+    image:
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80&fit=crop",
+    what: "Advised AgroEknor International on a $1 million institutional growth investment from Aruwa Capital Management. Our role included financial modelling, investment structuring, investor negotiations, commercial due diligence coordination, and transaction execution support. We strengthened working capital strategy, export pricing models, and supply chain economics to align with institutional investment criteria.",
+    outcome: [
+      "Expanded export footprint into Asia, Europe, and North America",
+      "Secured global hygiene and food safety certifications",
+      "Upgraded processing and digital traceability systems",
+      "Strengthened export financing capacity",
+    ],
+    impact: [
+      "Increased foreign exchange earnings from non-oil exports",
+      "Empowered 3,000+ women and smallholder farmers",
+      "Embedded gender-lens investment principles",
+      "Strengthened rural value chains and agricultural formalization",
+    ],
+  },
+  {
+    slug: "agroeknor-followon",
+    category: "fundraising",
+    pillar: "Capital & Fundraising Advisory",
+    title: "AgroEknor – Follow-On Investment for Scale & Resilience",
+    tag: "Agribusiness · Scale & Resilience",
+    size: "Follow-On · ~$0.7m",
+    image:
+      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1600&q=80&fit=crop",
+    what: "Served as ongoing investment advisor and due diligence partner for follow-on financing to support capacity expansion, infrastructure completion, and supply chain resilience. We updated financial projections, supported investor engagement, stress-tested export demand assumptions, and structured expansion capital allocation.",
+    outcome: [
+      "Expanded production capacity to meet 8,000+ ton export order book",
+      "Delivered critical infrastructure including fumigation chambers",
+      "Diversified product mix and improved gross margins",
+      "Strengthened export reliability and logistics efficiency",
+    ],
+    impact: [
+      "Improved farmer productivity through FEEP",
+      "Increased income stability for smallholder farmers",
+      "Enhanced climate-smart agricultural practices",
+      "Strengthened export-led inclusive growth",
+    ],
+  },
+  {
+    slug: "nigeria-high-speed-rail",
+    category: "ppp",
+    pillar: "Advisory & Consulting",
+    title: "Nigeria High-Speed Rail Network",
+    tag: "Transport Infrastructure · PPP · ~$200bn",
+    size: "4,000km · Six geopolitical zones",
+    image:
+      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&fit=crop",
+    what: "Delivered Outline Business Case (OBC), investment modelling, and financial structuring advisory to the De-Sadel Consortium for Nigeria’s proposed 4,000km high-speed rail network spanning all six geopolitical zones. Our work included demand modelling validation, capital expenditure structuring, multi-scenario fiscal stress testing, concession modelling, long-term revenue forecasts, and socio-economic cost-benefit analysis aligned with ICRC requirements.",
+    outcome: [
+      "Secured OBC approval and Letter of No Objection from ICRC",
+      "Demonstrated fiscal sustainability and private capital viability",
+      "Structured one of Africa’s largest proposed transport PPP frameworks",
+    ],
+    impact: [
+      "Catalyses national integration and trade efficiency",
+      "Reduces logistics costs and travel time",
+      "Stimulates long-term productivity and regional development",
+      "Positions Nigeria for transformational infrastructure-led growth",
+    ],
+  },
+  {
+    slug: "toll-central-clearing-house",
+    category: "ppp",
+    pillar: "Advisory & Consulting",
+    title: "Nigeria Toll Central Clearing House (CCH)",
+    tag: "Road Infrastructure · Revenue Platform",
+    size: "National concession · Equinox Group",
+    image:
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1600&q=80&fit=crop",
+    what: "Led the development of the Outline and Full Business Case, built the financial model, and supported transaction structuring for the concession of Nigeria’s Toll Central Clearing House to Equinox Group. We developed toll harmonisation economics, revenue sharing frameworks, tariff modelling, and concession bankability analysis.",
+    outcome: [
+      "Established centralized toll revenue platform",
+      "Enhanced transparency and predictability of road asset revenues",
+      "Strengthened investor confidence in federal road monetization",
+    ],
+    impact: [
+      "Supports long-term maintenance of federal highways",
+      "Mobilizes private capital for infrastructure upgrades",
+      "Enhances fiscal sustainability of transport infrastructure",
+    ],
+  },
+  {
+    slug: "citizenship-business-services",
+    category: "ppp",
+    pillar: "Advisory & Consulting",
+    title: "Citizenship & Business Services Modernisation",
+    tag: "Public Sector · Digital Modernisation",
+    size: "PPP · Ministry of Interior",
+    image:
+      "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=1600&q=80&fit=crop",
+    what: "Built the PPP financial model for digital modernization of Citizenship and Business services including expatriate quotas, business permits, citizenship applications, and compliance systems. Structured revenue-backed concession framework and automation cost-benefit analysis.",
+    outcome: [
+      "Structured viable private-sector participation model",
+      "Improved processing timelines and digital integration",
+      "Strengthened revenue assurance mechanisms",
+    ],
+    impact: [
+      "Improved ease of doing business in Nigeria",
+      "Strengthened regulatory transparency",
+      "Enhanced public sector efficiency and governance",
+    ],
+  },
+  {
+    slug: "zungeru-hydro",
+    category: "energy",
+    pillar: "Advisory & Consulting",
+    title: "Zungeru Hydroelectric Power Plant",
+    tag: "Renewable Energy · Concession Advisory",
+    size: "700MW · Mainstream Energy Solutions",
+    image:
+      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1600&q=80&fit=crop",
+    what: "Provided financial modelling, concession structuring, and tariff advisory to ICRC and multiple MDAs for concession to Mainstream Energy Solutions Limited. Structured long-term revenue and pricing framework aligned with regulatory guidelines.",
+    outcome: [
+      "Supported successful concession of major hydropower asset",
+      "Strengthened investor confidence in large-scale power PPPs",
+    ],
+    impact: [
+      "Increased renewable generation capacity",
+      "Enhanced grid stability",
+      "Reduced fossil fuel dependence",
+    ],
+  },
+  {
+    slug: "itisi-hydro",
+    category: "energy",
+    pillar: "Advisory & Consulting",
+    title: "Itisi Hydropower Project",
+    tag: "Renewable Energy · PPP",
+    size: "40MW · ~$600m Revenue Potential",
+    image:
+      "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1600&q=80&fit=crop",
+    what: "Developed financial model for 30-year PPP concession aligned with Nigeria’s Water Sector Roadmap. Integrated power generation, irrigation economics, and infrastructure cost recovery modelling.",
+    outcome: [
+      "Structured bankable concession revenue model",
+      "Enabled private sector participation framework",
+    ],
+    impact: [
+      "Expanded renewable energy supply",
+      "Enhanced irrigation and agro-industrial productivity",
+      "Supported regional economic development",
+    ],
+  },
+  {
+    slug: "dasin-hausa-hydro",
+    category: "energy",
+    pillar: "Advisory & Consulting",
+    title: "Dasin Hausa Hydropower Project",
+    tag: "Energy & Flood Control · Infrastructure Finance",
+    size: "300MW · Run-of-river hydro",
+    image:
+      "https://images.unsplash.com/photo-1502920514313-52581002a659?w=1600&q=80&fit=crop",
+    what: "Developed financial model supporting ICRC evaluation of 300MW run-of-river hydro asset, integrating flood mitigation infrastructure, dam economics, transmission integration, and long-term power revenue modelling.",
+    outcome: [
+      "Structured large-scale renewable concession framework",
+      "Integrated environmental mitigation economics into PPP design",
+    ],
+    impact: [
+      "Reduced recurring flood risks across multiple states",
+      "Expanded clean energy generation",
+      "Strengthened climate resilience and grid capacity",
+    ],
+  },
+  {
+    slug: "sectorlead-waste-to-energy",
+    category: "climate",
+    pillar: "Platforms & Innovation",
+    title: "SectorLead – Waste-to-Energy Platform",
+    tag: "Climate Infrastructure · Circular Economy",
+    size: "~$4bn · Multi-state rollout",
+    image:
+      "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1600&q=80&fit=crop",
+    what: "Developed integrated financial model, business plan, carbon revenue framework, investor memorandum, and roadshow materials for phased rollout across five states. Structured energy offtake assumptions, municipal tipping fee models, and carbon credit monetization.",
+    outcome: [
+      "Positioned platform for institutional and climate finance",
+      "Structured scalable multi-state expansion model",
+      "Enabled blended revenue strategy",
+    ],
+    impact: [
+      "Addresses 32m+ tons annual municipal waste",
+      "Reduces methane emissions",
+      "Advances circular economy and carbon market participation",
+      "Strengthens climate mitigation strategy",
+    ],
+  },
+  {
+    slug: "nimasa-sts",
+    category: "maritime",
+    pillar: "Advisory & Consulting",
+    title: "NIMASA Ship-to-Ship Anchorage Facilities",
+    tag: "Maritime Infrastructure · PPP Platform",
+    size: "Three maritime corridors",
+    image:
+      "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=1600&q=80&fit=crop",
+    what: "Developed financial model within broader OBC for regulated STS anchorage framework across Western, Central, and Eastern maritime zones. Structured revenue capture systems and PPP participation model.",
+    outcome: [
+      "Reduced informal revenue leakages",
+      "Formalized offshore transfer operations",
+      "Strengthened maritime investment framework",
+    ],
+    impact: [
+      "Improved maritime safety and regulation",
+      "Increased government revenue",
+      "Enhanced Nigeria’s regional maritime competitiveness",
+    ],
+  },
+  {
+    slug: "secure-offshore-area",
+    category: "maritime",
+    pillar: "Advisory & Consulting",
+    title: "Secure Offshore Area (SOA) – Lagos",
+    tag: "Maritime Security · Offshore Infrastructure",
+    size: "PPP concession · Lagos offshore hub",
+    image:
+      "https://images.unsplash.com/photo-1518803194621-27188ba362c9?w=1600&q=80&fit=crop",
+    what: "Built financial model and PPP structure for secure offshore anchorage facility supporting STS operations. The Secure Offshore Area (SOA) project aims to establish a state-of-the-art offshore facility in Lagos State, Nigeria, to support Ship-to-Ship (STS) transfer operations and provide a secure anchorage zone for vessels. This project will be developed through a Public-Private Partnership (PPP) model, leveraging private sector expertise and investment alongside government support to create a world-class maritime hub.",
+    outcome: [
+      "Structured commercially viable maritime security infrastructure",
+      "Enabled private capital participation",
+    ],
+    impact: [
+      "Enhanced offshore vessel security",
+      "Strengthened Nigeria’s logistics infrastructure",
+    ],
+  },
+  {
+    slug: "mmia-bhs",
+    category: "aviation",
+    pillar: "Advisory & Consulting",
+    title: "Integrated Baggage Handling System – MMIA Lagos",
+    tag: "Aviation Infrastructure · PPP Modernisation",
+    size: "Airport systems upgrade",
+    image:
+      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80&fit=crop",
+    what: "Developed financial model for PPP-backed BHS modernization including CAPEX structuring, operational efficiency analysis, and concession revenue modelling.",
+    outcome: [
+      "Structured sustainable airport infrastructure upgrade",
+      "Improved operational revenue optimization",
+    ],
+    impact: [
+      "Reduced baggage mishandling",
+      "Improved passenger experience",
+      "Enhanced aviation competitiveness",
+    ],
+  },
+  {
+    slug: "kashimbila-airport",
+    category: "aviation",
+    pillar: "Advisory & Consulting",
+    title: "Kashimbila Integrated Cargo Airport – Taraba State",
+    tag: "Aviation · Regional Trade Infrastructure",
+    size: "PPP · Agro-export hub",
+    image:
+      "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=1600&q=80&fit=crop",
+    what: "Delivered financial modelling, OBC advisory, and commercial repositioning analysis for PPP-driven cargo airport transformation.",
+    outcome: [
+      "Structured cargo-focused aviation revenue model",
+      "Positioned airport for agro-export facilitation",
+    ],
+    impact: [
+      "Boosted regional trade corridor",
+      "Created employment and agro-industrial linkages",
+      "Strengthened North-East economic integration",
+    ],
+  },
+];
