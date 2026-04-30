@@ -4,6 +4,7 @@ import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin } from "lucide-react";
 import { DpwSymbol } from "./FlowingLines";
 
 const GOVERNANCE = [
+  { to: "/governance", label: "Governance, Ethics & Compliance Statement" },
   { to: "/policies/privacy", label: "Privacy Policy" },
   { to: "/policies/terms", label: "Terms of Service" },
   { to: "/policies/ethics", label: "Code of Ethics & Professional Conduct" },

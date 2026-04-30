@@ -14,6 +14,7 @@ import Innovation from "./pages/Innovation";
 import Contact from "./pages/Contact";
 import Article from "./pages/Article";
 import PolicyPage from "./pages/PolicyPage";
+import Governance from "./pages/Governance";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -110,6 +111,14 @@ export default function App() {
             element={
               <Layout>
                 <Article />
+              </Layout>
+            }
+          />
+          <Route
+            path="/governance"
+            element={
+              <Layout>
+                <Governance />
               </Layout>
             }
           />
