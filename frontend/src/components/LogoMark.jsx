@@ -34,21 +34,21 @@ export default function LogoMark({
       <img
         src={src}
         alt={alt}
-        width={size * 2}
-        height={size * 2}
         loading="eager"
         decoding="async"
         draggable={false}
         style={{
-          // The square JPG places the symbol in the upper-middle and the
-          // wordmark below. We scale 2× and shift upward so only the symbol
-          // portion is visible.
-          width: size * 2,
-          height: size * 2,
+          // New symbol-only logo: the mark is centered in the square with
+          // ~25% padding on each side. We scale ~1.55× and center-crop so the
+          // padding is trimmed but the full mark is visible, with the
+          // surrounding (matching) JPG background blending into the container.
+          width: "155%",
+          height: "155%",
+          marginLeft: "-27.5%",
+          marginTop: "-27.5%",
           objectFit: "cover",
-          objectPosition: "center 20%",
+          objectPosition: "center center",
           display: "block",
-          transform: "translateY(-20%)",
         }}
       />
     </span>
