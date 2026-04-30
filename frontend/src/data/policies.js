@@ -1,8 +1,13 @@
 // Datapoolwaters Advisory — Governance & Policies (verbatim from client docs)
 // Each policy renders as numbered sections with optional bullet lists.
 
+// Single source of truth for the last-reviewed indicator shown on every policy
+// and the Governance Statement. Update this when policies are re-approved.
+export const POLICY_LAST_REVIEWED = "December 2025";
+
 export const GOVERNANCE_STATEMENT = {
   title: "Governance, Ethics & Compliance Statement",
+  lastReviewed: POLICY_LAST_REVIEWED,
   intro:
     "Datapoolwaters Advisory Limited (\u201cDatapoolwaters\u201d) is a boutique investment and strategic financial advisory firm committed to the highest standards of governance, integrity, transparency, and professional conduct across all its operations. Operating across Nigeria and other African jurisdictions, Datapoolwaters aligns its practices with the expectations of Development Finance Institutions (DFIs), public sector counterparties, PPP authorities, institutional investors, and regulators.",
   sections: [
@@ -93,6 +98,7 @@ export const POLICIES = {
   privacy: {
     title: "Privacy Policy",
     formalTitle: "Datapoolwaters Advisory Limited — Privacy Policy",
+    lastReviewed: POLICY_LAST_REVIEWED,
     sections: [
       {
         h: "1. Introduction",
@@ -239,6 +245,7 @@ export const POLICIES = {
   terms: {
     title: "Terms of Service",
     formalTitle: "Datapoolwaters Advisory Limited — Terms of Service",
+    lastReviewed: POLICY_LAST_REVIEWED,
     sections: [
       {
         h: "1. Introduction and Acceptance of Terms",
@@ -355,6 +362,7 @@ export const POLICIES = {
   ethics: {
     title: "Code of Ethics & Professional Conduct",
     formalTitle: "Datapoolwaters Advisory Limited — Code of Ethics & Professional Conduct",
+    lastReviewed: POLICY_LAST_REVIEWED,
     sections: [
       {
         h: "1. Purpose and Statement of Commitment",
@@ -514,6 +522,7 @@ export const POLICIES = {
   "anti-trafficking": {
     title: "Anti-Trafficking & Modern Slavery Policy",
     formalTitle: "Datapoolwaters Advisory Limited — Anti-Trafficking & Modern Slavery Policy",
+    lastReviewed: POLICY_LAST_REVIEWED,
     sections: [
       {
         h: "1. Policy Statement",
@@ -639,6 +648,7 @@ export const POLICIES = {
   whistleblowing: {
     title: "Whistleblowing Policy",
     formalTitle: "Datapoolwaters Advisory Limited — Whistleblowing Policy",
+    lastReviewed: POLICY_LAST_REVIEWED,
     sections: [
       {
         h: "1. Purpose and Policy Statement",

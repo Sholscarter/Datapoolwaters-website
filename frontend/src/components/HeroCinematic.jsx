@@ -6,43 +6,51 @@ import React, { useEffect, useRef, useState } from "react";
 
 const SCENES = [
   {
-    img: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=80&fit=crop",
-    fallback: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=1920&q=80",
+    // Opening — African savanna at sunset (the continent)
+    img: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=85&fit=crop",
+    fallback: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1920&q=85",
     sector: "",
   },
   {
-    img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80&fit=crop",
-    fallback: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1920&q=80",
+    // Agriculture — African farmer / cocoa / agro fields
+    img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=85&fit=crop",
+    fallback: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=85",
     sector: "Agriculture & Agribusiness",
   },
   {
-    img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80&fit=crop",
-    fallback: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&q=80",
+    // Renewable energy — solar farm
+    img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=85&fit=crop",
+    fallback: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&q=85",
     sector: "Renewable Energy",
   },
   {
-    img: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=80&fit=crop",
-    fallback: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1920&q=80",
+    // Infrastructure — Lekki / Lagos bridge at blue hour
+    img: "https://images.unsplash.com/photo-1618828665011-0abd973f7bb8?w=1920&q=85&fit=crop",
+    fallback: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=85",
     sector: "Infrastructure",
   },
   {
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80&fit=crop",
-    fallback: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80",
+    // Technology & AI — African developer / data
+    img: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1920&q=85&fit=crop",
+    fallback: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=85",
     sector: "Technology & AI",
   },
   {
-    img: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1920&q=80&fit=crop",
-    fallback: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1920&q=80",
+    // Banking & FinTech — Lagos skyline / financial district
+    img: "https://images.unsplash.com/photo-1577009041879-fa49dd3cba34?w=1920&q=85&fit=crop",
+    fallback: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1920&q=85",
     sector: "Banking & Financial Technology",
   },
   {
-    img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1920&q=80&fit=crop",
-    fallback: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1920&q=80",
+    // Electric mobility — EV / African city street at night
+    img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1920&q=85&fit=crop",
+    fallback: "https://images.unsplash.com/photo-1558618047-3c8e0d6b8e6b?w=1920&q=85",
     sector: "Electric Mobility",
   },
   {
-    img: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=80&fit=crop",
-    fallback: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=1920&q=80",
+    // Closing — Africa from above / skyline at dusk
+    img: "https://images.unsplash.com/photo-1580502734990-b45d43e04b64?w=1920&q=85&fit=crop",
+    fallback: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=85",
     sector: "",
   },
 ];
@@ -194,10 +202,22 @@ export default function HeroCinematic() {
               transform:
                 i === SCRIPT[beatIdx].sceneIdx ? "scale(1.0)" : "scale(1.08)",
               transition: "transform 8s ease-out",
-              filter: "brightness(0.65) saturate(1.2) contrast(1.08)",
+              filter:
+                "brightness(0.55) saturate(1.05) contrast(1.12) grayscale(0.35)",
             }}
           />
-          <div className="absolute inset-0 hero-overlay" style={{ zIndex: 2 }} />
+          {/* Brand-blue duotone tint — unifies all imagery into one film-like system */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(3,95,254,0.42) 0%, rgba(0,10,40,0.55) 60%, rgba(0,0,0,0.65) 100%)",
+              mixBlendMode: "multiply",
+              zIndex: 2,
+            }}
+          />
+          {/* Content legibility gradient */}
+          <div className="absolute inset-0 hero-overlay" style={{ zIndex: 3 }} />
         </div>
       ))}
 

@@ -25,6 +25,17 @@ export default function Governance() {
           <h1 className="font-serif text-5xl md:text-7xl leading-[1.02] text-dpw-black max-w-5xl">
             {g.title}
           </h1>
+          {g.lastReviewed && (
+            <div
+              className="mt-8 inline-flex items-center gap-2 px-4 py-1.5 bg-dpw-blue/10 border border-dpw-blue/30 rounded-full"
+              data-testid="governance-last-reviewed"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-dpw-blue" />
+              <span className="text-[11px] tracking-[0.22em] uppercase text-dpw-blue font-medium">
+                Last reviewed · {g.lastReviewed}
+              </span>
+            </div>
+          )}
           <p className="mt-10 text-[18px] leading-[1.7] text-dpw-dark-grey max-w-3xl">
             {g.intro}
           </p>
@@ -91,7 +102,12 @@ export default function Governance() {
                 <p className="mt-3 text-[14px] leading-[1.6] text-dpw-dark-grey">
                   {POLICY_META[k]?.blurb}
                 </p>
-                <div className="mt-6 inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase text-dpw-blue">
+                {p.lastReviewed && (
+                  <div className="mt-5 text-[10px] tracking-[0.2em] uppercase text-dpw-dark-grey/70">
+                    Last reviewed · {p.lastReviewed}
+                  </div>
+                )}
+                <div className="mt-4 inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase text-dpw-blue">
                   Read policy <ArrowRight size={12} />
                 </div>
               </Link>

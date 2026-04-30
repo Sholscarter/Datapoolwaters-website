@@ -119,6 +119,17 @@ export default function PolicyPage() {
           <div className="mt-4 text-[14px] text-dpw-dark-grey italic">
             {p.formalTitle}
           </div>
+          {p.lastReviewed && (
+            <div
+              className="mt-6 inline-flex items-center gap-2 px-4 py-1.5 bg-dpw-blue/10 border border-dpw-blue/30 rounded-full"
+              data-testid="policy-last-reviewed"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-dpw-blue" />
+              <span className="text-[11px] tracking-[0.22em] uppercase text-dpw-blue font-medium">
+                Last reviewed · {p.lastReviewed}
+              </span>
+            </div>
+          )}
         </div>
       </section>
 
