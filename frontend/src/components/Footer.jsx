@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin } from "lucide-react";
-import { DpwSymbol } from "./FlowingLines";
+import LogoMark from "./LogoMark";
 
 const GOVERNANCE = [
   { to: "/governance", label: "Governance, Ethics & Compliance Statement" },
@@ -58,7 +58,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <DpwSymbol size={44} color="#035FFE" />
+              <LogoMark variant="black" size={50} />
               <div className="font-serif text-xl leading-tight">
                 Datapoolwaters
                 <br />

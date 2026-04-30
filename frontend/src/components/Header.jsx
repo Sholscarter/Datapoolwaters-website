@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { DpwSymbol } from "./FlowingLines";
+import LogoMark from "./LogoMark";
 
 const NAV = [
   { to: "/who-we-are", label: "Who We Are" },
@@ -47,9 +47,10 @@ export default function Header({ transparentOnHero = false }) {
           data-testid="nav-home-logo"
           aria-label="Datapoolwaters Advisory — Home"
         >
-          <DpwSymbol
-            size={38}
-            color={transparent ? "#ffffff" : "#035FFE"}
+          <LogoMark
+            variant={transparent ? "black" : "white"}
+            size={44}
+            className={transparent ? "ring-0" : "ring-0"}
           />
           <div className="flex flex-col leading-none">
             <span

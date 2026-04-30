@@ -137,39 +137,115 @@ export default function WhoWeAre() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-24 md:py-32 bg-dpw-black text-white relative overflow-hidden">
-        <div className="absolute inset-y-0 right-0 w-1/2 opacity-[0.12] pointer-events-none">
-          <FlowingLines position="top-right" size={620} color="#035FFE" opacity={1} />
+      {/* Team — deliberately understated. Senior-led. Names on request. */}
+      <section className="py-24 md:py-36 bg-dpw-black text-white relative overflow-hidden">
+        {/* Ambient flowing-lines backdrop */}
+        <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+          <FlowingLines position="top-right" size={780} color="#035FFE" opacity={1} />
+          <FlowingLines position="bottom-left" size={520} color="#035FFE" opacity={0.7} />
         </div>
-        <div className="dpw-container relative grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
-            <div className="dpw-eyebrow mb-5" style={{ color: "#7aa8ff" }}>
-              Our Team
+
+        {/* Faint vertical rule on the left */}
+        <div
+          className="absolute left-10 top-1/2 -translate-y-1/2 w-px opacity-60 pointer-events-none"
+          style={{
+            height: "48%",
+            background:
+              "linear-gradient(to bottom, transparent, rgba(3,95,254,0.55), transparent)",
+          }}
+        />
+
+        <div className="dpw-container relative">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16">
+            <div className="md:col-span-5">
+              <div className="dpw-eyebrow mb-6" style={{ color: "#7aa8ff" }}>
+                The Team
+              </div>
+              <h2 className="font-serif text-5xl md:text-6xl leading-[1.02]">
+                Led by seniors.
+                <br />
+                Staffed by the{" "}
+                <em className="italic" style={{ color: "#7aa8ff" }}>
+                  best brains
+                </em>{" "}
+                in advisory.
+              </h2>
+              <div className="mt-8 h-px w-14 bg-dpw-blue" />
+              <p className="mt-8 text-white/75 text-[16px] leading-[1.75] max-w-md">
+                We keep a low public profile — by design. Our partners have
+                shaped billion-dollar transactions across African and global
+                markets, and our bench is drawn from ex-DFI, private equity,
+                development finance, and top-tier advisory backgrounds.
+              </p>
+              <p className="mt-4 text-white/55 italic text-[15px] leading-[1.75] max-w-md">
+                The work speaks first. Names are introduced at the table.
+              </p>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl leading-[1.05]">
-              Multidisciplinary. Senior-led. Proven.
-            </h2>
-          </div>
-          <div className="md:col-span-8 space-y-5 text-[17px] leading-[1.75] text-white/80">
-            <p>
-              Datapoolwaters Advisory is powered by a multidisciplinary team of
-              finance, infrastructure, policy, and investment professionals with
-              decades of combined experience across Africa and global markets.
-            </p>
-            <p>
-              Our collective expertise spans capital raising, complex financial
-              modelling, PPP structuring, climate and impact finance, corporate
-              strategy, and institutional advisory. We have advised governments,
-              DFIs, private equity funds, growth-stage companies, and
-              infrastructure developers on transactions and programs that shape
-              markets and unlock long-term value.
-            </p>
-            <p>
-              We combine technical depth with execution discipline — bringing
-              global standards to local realities, and turning ambitious ideas
-              into bankable, scalable outcomes.
-            </p>
+
+            {/* Credential tiles — stats that hint without naming */}
+            <div className="md:col-span-7">
+              <div className="grid grid-cols-2 gap-px bg-white/10 border border-white/10">
+                {[
+                  {
+                    k: "Decades",
+                    v: "Combined senior partner experience across African and global markets.",
+                  },
+                  {
+                    k: "DFI · PE · Big Four",
+                    v: "Pedigree our bench is drawn from — before they came to build here.",
+                  },
+                  {
+                    k: "$200bn+",
+                    v: "Capital considered, modelled, or structured across our engagements.",
+                  },
+                  {
+                    k: "14+",
+                    v: "Consequential mandates across infrastructure, energy, climate, and capital.",
+                  },
+                ].map((t, i) => (
+                  <div
+                    key={i}
+                    className="bg-dpw-black p-8 md:p-10 hover:bg-dpw-blue transition-colors duration-500 group"
+                    data-testid={`team-stat-${i}`}
+                  >
+                    <div className="font-serif text-3xl md:text-[40px] leading-none text-white group-hover:text-white">
+                      {t.k}
+                    </div>
+                    <div className="mt-5 h-px w-8 bg-dpw-blue group-hover:bg-white/60 transition-colors" />
+                    <p className="mt-5 text-[14px] leading-[1.6] text-white/65 group-hover:text-white/95">
+                      {t.v}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Wet-appetite reveal strip */}
+              <div className="mt-10 p-8 md:p-10 border border-white/15 bg-white/[0.03]">
+                <div className="dpw-eyebrow mb-3" style={{ color: "#7aa8ff" }}>
+                  Who You&apos;ll Meet
+                </div>
+                <p className="font-serif text-2xl md:text-[26px] leading-[1.35] text-white">
+                  Senior practitioners who&apos;ve sat on both sides of the
+                  table — as advisors, investors, policymakers, and operators
+                  — before choosing to build here.
+                </p>
+                <p className="mt-5 text-[14px] leading-[1.7] text-white/60">
+                  Serious engagements begin with a conversation. If you are a
+                  government, institution, or founder exploring a meaningful
+                  mandate, we&apos;ll introduce the right partners directly.
+                </p>
+                <Link
+                  to="/contact"
+                  data-testid="team-request-intro"
+                  className="mt-7 inline-flex items-center gap-3 text-dpw-blue hover:text-white transition-colors text-[12px] tracking-[0.22em] uppercase group"
+                >
+                  Request an introduction
+                  <span className="w-9 h-9 border border-dpw-blue group-hover:border-white rounded-full grid place-items-center transition-transform group-hover:translate-x-1">
+                    <ArrowRight size={13} />
+                  </span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -183,13 +259,13 @@ export default function WhoWeAre() {
               Join Us
             </div>
             <h2 className="font-serif text-4xl md:text-5xl leading-[1.08] max-w-3xl">
-              If you are rigorous in your thinking and motivated by long-term
-              impact, we would love to hear from you.
+              Rigorous thinkers welcome. Loud résumés, not so much.
             </h2>
             <p className="mt-6 text-white/90 text-[17px] max-w-2xl leading-relaxed">
-              We welcome driven professionals, analysts, sector specialists, and
-              mission-aligned collaborators who want to help build resilient
-              institutions and transformative projects across Africa.
+              We recruit quietly and selectively — analysts, sector specialists,
+              and senior practitioners motivated by long-term impact over
+              visibility. If you would rather be known for the work than the
+              masthead, we would love to hear from you.
             </p>
           </div>
           <div className="md:col-span-4 md:text-right">
