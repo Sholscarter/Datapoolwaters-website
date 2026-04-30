@@ -87,7 +87,7 @@ export const CASE_STUDIES = [
     tag: "Transport Infrastructure · PPP · ~$200bn",
     size: "4,000km · Six geopolitical zones",
     image:
-      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&fit=crop",
+      "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1600&q=80&fit=crop",
     what: "Delivered Outline Business Case (OBC), investment modelling, and financial structuring advisory to the De-Sadel Consortium for Nigeria’s proposed 4,000km high-speed rail network spanning all six geopolitical zones. Our work included demand modelling validation, capital expenditure structuring, multi-scenario fiscal stress testing, concession modelling, long-term revenue forecasts, and socio-economic cost-benefit analysis aligned with ICRC requirements.",
     outcome: [
       "Secured OBC approval and Letter of No Objection from ICRC",
@@ -109,7 +109,7 @@ export const CASE_STUDIES = [
     tag: "Road Infrastructure · Revenue Platform",
     size: "National concession · Equinox Group",
     image:
-      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1600&q=80&fit=crop",
+      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1600&q=80&fit=crop",
     what: "Led the development of the Outline and Full Business Case, built the financial model, and supported transaction structuring for the concession of Nigeria’s Toll Central Clearing House to Equinox Group. We developed toll harmonisation economics, revenue sharing frameworks, tariff modelling, and concession bankability analysis.",
     outcome: [
       "Established centralized toll revenue platform",
@@ -130,7 +130,7 @@ export const CASE_STUDIES = [
     tag: "Public Sector · Digital Modernisation",
     size: "PPP · Ministry of Interior",
     image:
-      "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=1600&q=80&fit=crop",
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80&fit=crop",
     what: "Built the PPP financial model for digital modernization of Citizenship and Business services including expatriate quotas, business permits, citizenship applications, and compliance systems. Structured revenue-backed concession framework and automation cost-benefit analysis.",
     outcome: [
       "Structured viable private-sector participation model",
