@@ -40,8 +40,7 @@ export const CASE_STUDIES = [
     title: "AgroEknor – Growth Capital & Export Market Expansion",
     tag: "Agriculture & Exports · Gender-Lens Capital",
     size: "Growth Equity · ~$1m",
-    image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80&fit=crop",
+    image: "/assets/case-agroeknor.png",
     what: "Advised AgroEknor International on a $1 million institutional growth investment from Aruwa Capital Management. Our role included financial modelling, investment structuring, investor negotiations, commercial due diligence coordination, and transaction execution support. We strengthened working capital strategy, export pricing models, and supply chain economics to align with institutional investment criteria.",
     outcome: [
       "Expanded export footprint into Asia, Europe, and North America",
@@ -63,8 +62,7 @@ export const CASE_STUDIES = [
     title: "AgroEknor – Follow-On Investment for Scale & Resilience",
     tag: "Agribusiness · Scale & Resilience",
     size: "Follow-On · ~$0.7m",
-    image:
-      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1600&q=80&fit=crop",
+    image: "/assets/case-agroeknor.png",
     what: "Served as ongoing investment advisor and due diligence partner for follow-on financing to support capacity expansion, infrastructure completion, and supply chain resilience. We updated financial projections, supported investor engagement, stress-tested export demand assumptions, and structured expansion capital allocation.",
     outcome: [
       "Expanded production capacity to meet 8,000+ ton export order book",
@@ -86,8 +84,7 @@ export const CASE_STUDIES = [
     title: "Nigeria High-Speed Rail Network",
     tag: "Transport Infrastructure · PPP · ~$200bn",
     size: "4,000km · Six geopolitical zones",
-    image:
-      "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1600&q=80&fit=crop",
+    image: "/assets/case-hsr.avif",
     what: "Delivered Outline Business Case (OBC), investment modelling, and financial structuring advisory to the De-Sadel Consortium for Nigeria’s proposed 4,000km high-speed rail network spanning all six geopolitical zones. Our work included demand modelling validation, capital expenditure structuring, multi-scenario fiscal stress testing, concession modelling, long-term revenue forecasts, and socio-economic cost-benefit analysis aligned with ICRC requirements.",
     outcome: [
       "Secured OBC approval and Letter of No Objection from ICRC",
@@ -170,8 +167,7 @@ export const CASE_STUDIES = [
     title: "Itisi Hydropower Project",
     tag: "Renewable Energy · PPP",
     size: "40MW · ~$600m Revenue Potential",
-    image:
-      "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1600&q=80&fit=crop",
+    image: "/assets/case-itisi.jpeg",
     what: "Developed financial model for 30-year PPP concession aligned with Nigeria’s Water Sector Roadmap. Integrated power generation, irrigation economics, and infrastructure cost recovery modelling.",
     outcome: [
       "Structured bankable concession revenue model",
@@ -190,8 +186,7 @@ export const CASE_STUDIES = [
     title: "Dasin Hausa Hydropower Project",
     tag: "Energy & Flood Control · Infrastructure Finance",
     size: "300MW · Run-of-river hydro",
-    image:
-      "https://images.unsplash.com/photo-1502920514313-52581002a659?w=1600&q=80&fit=crop",
+    image: "/assets/case-dasin-hausa.png",
     what: "Developed financial model supporting ICRC evaluation of 300MW run-of-river hydro asset, integrating flood mitigation infrastructure, dam economics, transmission integration, and long-term power revenue modelling.",
     outcome: [
       "Structured large-scale renewable concession framework",
@@ -272,8 +267,7 @@ export const CASE_STUDIES = [
     title: "Integrated Baggage Handling System – MMIA Lagos",
     tag: "Aviation Infrastructure · PPP Modernisation",
     size: "Airport systems upgrade",
-    image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80&fit=crop",
+    image: "/assets/case-mmia-bhs.png",
     what: "Developed financial model for PPP-backed BHS modernization including CAPEX structuring, operational efficiency analysis, and concession revenue modelling.",
     outcome: [
       "Structured sustainable airport infrastructure upgrade",
