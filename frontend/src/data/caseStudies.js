@@ -40,7 +40,7 @@ export const CASE_STUDIES = [
     title: "AgroEknor – Growth Capital & Export Market Expansion",
     tag: "Agriculture & Exports · Gender-Lens Capital",
     size: "Growth Equity · ~$1m",
-    image: "/assets/case-agroeknor.png",
+    image: "/assets/case-agroeknor-1.png",
     what: "Advised AgroEknor International on a $1 million institutional growth investment from Aruwa Capital Management. Our role included financial modelling, investment structuring, investor negotiations, commercial due diligence coordination, and transaction execution support. We strengthened working capital strategy, export pricing models, and supply chain economics to align with institutional investment criteria.",
     outcome: [
       "Expanded export footprint into Asia, Europe, and North America",
@@ -227,8 +227,7 @@ export const CASE_STUDIES = [
     title: "NIMASA Ship-to-Ship Anchorage Facilities",
     tag: "Maritime Infrastructure · PPP Platform",
     size: "Three maritime corridors",
-    image:
-      "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=1600&q=80&fit=crop",
+    image: "/assets/case-sts.png",
     what: "Developed financial model within broader OBC for regulated STS anchorage framework across Western, Central, and Eastern maritime zones. Structured revenue capture systems and PPP participation model.",
     outcome: [
       "Reduced informal revenue leakages",
@@ -248,8 +247,7 @@ export const CASE_STUDIES = [
     title: "Secure Offshore Area (SOA) – Lagos",
     tag: "Maritime Security · Offshore Infrastructure",
     size: "PPP concession · Lagos offshore hub",
-    image:
-      "https://images.unsplash.com/photo-1518803194621-27188ba362c9?w=1600&q=80&fit=crop",
+    image: "/assets/case-soa.png",
     what: "Built financial model and PPP structure for secure offshore anchorage facility supporting STS operations. The Secure Offshore Area (SOA) project aims to establish a state-of-the-art offshore facility in Lagos State, Nigeria, to support Ship-to-Ship (STS) transfer operations and provide a secure anchorage zone for vessels. This project will be developed through a Public-Private Partnership (PPP) model, leveraging private sector expertise and investment alongside government support to create a world-class maritime hub.",
     outcome: [
       "Structured commercially viable maritime security infrastructure",
@@ -286,8 +284,7 @@ export const CASE_STUDIES = [
     title: "Kashimbila Integrated Cargo Airport – Taraba State",
     tag: "Aviation · Regional Trade Infrastructure",
     size: "PPP · Agro-export hub",
-    image:
-      "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=1600&q=80&fit=crop",
+    image: "/assets/case-kashimbila.png",
     what: "Delivered financial modelling, OBC advisory, and commercial repositioning analysis for PPP-driven cargo airport transformation.",
     outcome: [
       "Structured cargo-focused aviation revenue model",
