@@ -17,8 +17,7 @@ export const CASE_STUDIES = [
     title: "Arnergy – Scaling Clean Energy Access in Nigeria",
     tag: "Distributed Renewable Energy · VC / Climate Capital",
     size: "Series A · ~$9m",
-    image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80&fit=crop",
+    image: "/assets/case-arnergy.png",
     what: "Served as end-to-end transaction and investment advisor on Arnergy’s $9 million Series A raise. Our mandate covered investment readiness assessment, financial model refinement, valuation analysis, investor targeting strategy, data room preparation, due diligence coordination, and negotiation support with global climate-focused investors including Breakthrough Energy Ventures, All On, ElectriFI, and Norfund. We worked closely with management to align capital structure, governance, and growth projections with institutional investor expectations.",
     outcome: [
       "Successfully mobilized growth capital from leading global climate funds",
@@ -105,8 +104,7 @@ export const CASE_STUDIES = [
     title: "Nigeria Toll Central Clearing House (CCH)",
     tag: "Road Infrastructure · Revenue Platform",
     size: "National concession · Equinox Group",
-    image:
-      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1600&q=80&fit=crop",
+    image: "/assets/case-toll-cch.jpg",
     what: "Led the development of the Outline and Full Business Case, built the financial model, and supported transaction structuring for the concession of Nigeria’s Toll Central Clearing House to Equinox Group. We developed toll harmonisation economics, revenue sharing frameworks, tariff modelling, and concession bankability analysis.",
     outcome: [
       "Established centralized toll revenue platform",
@@ -147,8 +145,7 @@ export const CASE_STUDIES = [
     title: "Zungeru Hydroelectric Power Plant",
     tag: "Renewable Energy · Concession Advisory",
     size: "700MW · Mainstream Energy Solutions",
-    image:
-      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1600&q=80&fit=crop",
+    image: "/assets/case-zungeru.jpeg",
     what: "Provided financial modelling, concession structuring, and tariff advisory to ICRC and multiple MDAs for concession to Mainstream Energy Solutions Limited. Structured long-term revenue and pricing framework aligned with regulatory guidelines.",
     outcome: [
       "Supported successful concession of major hydropower asset",
@@ -205,8 +202,7 @@ export const CASE_STUDIES = [
     title: "SectorLead – Waste-to-Energy Platform",
     tag: "Climate Infrastructure · Circular Economy",
     size: "~$4bn · Multi-state rollout",
-    image:
-      "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1600&q=80&fit=crop",
+    image: "/assets/case-sectorlead.jpg",
     what: "Developed integrated financial model, business plan, carbon revenue framework, investor memorandum, and roadshow materials for phased rollout across five states. Structured energy offtake assumptions, municipal tipping fee models, and carbon credit monetization.",
     outcome: [
       "Positioned platform for institutional and climate finance",
