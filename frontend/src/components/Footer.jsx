@@ -15,6 +15,7 @@ const GOVERNANCE = [
 const EXPLORE = [
   { to: "/who-we-are", label: "Who We Are" },
   { to: "/what-we-do", label: "What We Do" },
+  { to: "/business-concierge", label: "Business Concierge" },
   { to: "/success-stories", label: "Success Stories" },
   { to: "/academy", label: "Academy" },
   { to: "/capital", label: "Capital" },

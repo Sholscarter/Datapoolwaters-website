@@ -38,6 +38,31 @@ class ContactSubmission(ContactSubmissionCreate):
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
+class NewsletterSubscribeCreate(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    email: EmailStr
+    source: Optional[str] = Field(default="business-concierge", max_length=80)
+
+
+class NewsletterSubscribe(NewsletterSubscribeCreate):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
+class PurchaseIntentCreate(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    product: str = Field(..., min_length=2, max_length=160)
+    name: str = Field(..., min_length=2, max_length=120)
+    email: EmailStr
+    phone: Optional[str] = Field(None, max_length=40)
+    notes: Optional[str] = Field(None, max_length=2000)
+
+
+class PurchaseIntent(PurchaseIntentCreate):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
 # ───────────────────────── Routes ─────────────────────────
 @api_router.get("/health")
 async def health():
@@ -65,6 +90,29 @@ async def list_contacts(limit: int = 100):
         if isinstance(it.get('created_at'), str):
             it['created_at'] = datetime.fromisoformat(it['created_at'])
     return items
+
+
+@api_router.post("/newsletter/subscribe", response_model=NewsletterSubscribe, status_code=201)
+async def newsletter_subscribe(input: NewsletterSubscribeCreate):
+    existing = await db.newsletter_subs.find_one({"email": input.email}, {"_id": 0})
+    if existing:
+        if isinstance(existing.get('created_at'), str):
+            existing['created_at'] = datetime.fromisoformat(existing['created_at'])
+        return NewsletterSubscribe(**existing)
+    sub = NewsletterSubscribe(**input.model_dump())
+    doc = sub.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    await db.newsletter_subs.insert_one(doc)
+    return sub
+
+
+@api_router.post("/purchase-intent", response_model=PurchaseIntent, status_code=201)
+async def purchase_intent(input: PurchaseIntentCreate):
+    intent = PurchaseIntent(**input.model_dump())
+    doc = intent.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    await db.purchase_intents.insert_one(doc)
+    return intent
 
 
 app.include_router(api_router)

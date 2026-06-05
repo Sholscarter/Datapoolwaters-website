@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import Article from "./pages/Article";
 import PolicyPage from "./pages/PolicyPage";
 import Governance from "./pages/Governance";
+import BusinessConcierge from "./pages/BusinessConcierge";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -111,6 +112,14 @@ export default function App() {
             element={
               <Layout>
                 <Article />
+              </Layout>
+            }
+          />
+          <Route
+            path="/business-concierge"
+            element={
+              <Layout>
+                <BusinessConcierge />
               </Layout>
             }
           />
