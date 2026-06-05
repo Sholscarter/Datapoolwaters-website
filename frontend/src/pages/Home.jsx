@@ -200,10 +200,10 @@ export default function Home() {
               institutions, and governments building Africa&apos;s next decade.
             </p>
             <div className="mt-10">
-              <div className="font-sans font-bold text-white">
+              <div className="font-serif text-2xl text-white leading-tight">
                 Datapoolwaters Advisory
               </div>
-              <div className="font-sans italic text-white/80 text-[14px]">
+              <div className="font-serif italic text-white/80 text-[16px] mt-1">
                 Capital · Strategy · Sustainability
               </div>
             </div>

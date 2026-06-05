@@ -17,7 +17,7 @@
       <line x1="70" y1="160" x2="158" y2="120"></line>
     </g>
     <path d="M6 162 A 64 92 0 0 1 134 162" fill="none" stroke="#FFFFFF" stroke-width="3"></path>
-    <text x="190" y="78" font-size="50" font-weight="700" fill="#FFFFFF" letter-spacing="-1">Datapoolwaters</text>
-    <text x="192" y="128" font-size="33" font-weight="500" fill="#9FFFE6" letter-spacing="6">BUSINESS CONCIERGE</text>
+    <text x="190" y="78" font-family="Optima, 'Optima Nova', 'URW Palladio L', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif" font-size="56" font-weight="500" fill="#FFFFFF" letter-spacing="-1.5">Datapoolwaters</text>
+    <text x="192" y="128" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" font-weight="500" fill="#9FFFE6" letter-spacing="9">BUSINESS CONCIERGE</text>
   </g>
 </svg>
