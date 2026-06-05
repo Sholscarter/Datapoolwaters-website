@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="200" viewBox="0 0 760 200" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="teal" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#0A7C66"></stop><stop offset="1" stop-color="#00C9A3"></stop>
+    </linearGradient>
+  </defs>
+  <g transform="translate(10,20)">
+    <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round">
+      <line x1="70" y1="160" x2="18" y2="40"></line>
+      <line x1="70" y1="160" x2="45" y2="26"></line>
+      <line x1="70" y1="160" x2="78" y2="20"></line>
+      <line x1="70" y1="160" x2="111" y2="28"></line>
+      <line x1="70" y1="160" x2="135" y2="50"></line>
+    </g>
+    <g stroke="url(#teal)" stroke-width="3" stroke-linecap="round">
+      <line x1="70" y1="160" x2="150" y2="82"></line>
+      <line x1="70" y1="160" x2="158" y2="120"></line>
+    </g>
+    <path d="M6 162 A 64 92 0 0 1 134 162" fill="none" stroke="#FFFFFF" stroke-width="3"></path>
+    <text x="190" y="78" font-size="50" font-weight="700" fill="#FFFFFF" letter-spacing="-1">Datapoolwaters</text>
+    <text x="192" y="128" font-size="33" font-weight="500" fill="#9FFFE6" letter-spacing="6">BUSINESS CONCIERGE</text>
+  </g>
+</svg>
