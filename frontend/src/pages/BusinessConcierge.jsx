@@ -464,7 +464,7 @@ function FreeResources() {
                 type="submit"
                 disabled={submitting}
                 data-testid="bc-newsletter-submit"
-                className="h-12 px-6 rounded-md bg-white text-[#1A4FFF] hover:bg-[#101317] hover:text-white transition-colors text-[12px] tracking-[0.18em] uppercase font-semibold disabled:opacity-60"
+                className="h-12 px-6 rounded-md bg-white text-[#1A4FFF] hover:bg-[#101317] hover:text-white transition-colors text-[12px] tracking-[0.18em] uppercase disabled:opacity-60"
               >
                 {submitting ? "Subscribing…" : "Subscribe"}
               </button>
@@ -1039,7 +1039,7 @@ function CtaBand() {
         <Link
           to="/contact"
           data-testid="bc-band-cta"
-          className="mt-10 inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#1A4FFF] hover:bg-[#101317] hover:text-white transition-colors text-[13px] tracking-[0.18em] uppercase font-semibold"
+          className="mt-10 inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#1A4FFF] hover:bg-[#101317] hover:text-white transition-colors text-[13px] tracking-[0.18em] uppercase"
         >
           Book a Consultation <ArrowRight size={14} />
         </Link>
