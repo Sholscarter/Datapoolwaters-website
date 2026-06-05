@@ -58,14 +58,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           {/* Brand column */}
           <div className="md:col-span-5">
-            <div className="flex items-center gap-3">
-              <LogoMark variant="black" size={50} />
-              <div className="font-serif text-xl leading-tight">
-                Datapoolwaters
-                <br />
-                Advisory
-              </div>
-            </div>
+            <LogoMark variant="white" size={44} />
             <p className="mt-8 text-[15px] text-white/70 max-w-md leading-relaxed">
               We design capital, structure ambition, and unlock scale for
               Africa's most consequential ideas. Boutique investment and

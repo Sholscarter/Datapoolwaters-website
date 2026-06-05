@@ -1,102 +1,113 @@
 import React from "react";
 
 /**
- * Datapoolwaters Advisory official logo mark (symbol-only variant).
+ * Datapoolwaters Advisory official logo.
  *
- * The supplied JPGs are SQUARE, with the "DA" symbol centered inside with
- * ~25% padding on every side. The symbol itself is intrinsically WIDER than
- * it is tall (roughly 1.35 : 1). Rendering it in a square container with
- * `object-fit: cover` visually compresses the mark because the sides get
- * clipped to fit the shorter height.
+ * Renders the real horizontal lockup SVG (symbol + "Datapoolwaters Advisory"
+ * wordmark, blue #035EFE). For light vs dark contexts we switch between the
+ * native blue render and a CSS-filtered white render — clean transparency,
+ * no JPG-background workaround.
  *
- * Fix: render in a RECTANGULAR container that matches the symbol's natural
- * aspect ratio, use `object-fit: contain` so the mark is never squished,
- * then scale it up so the padding around the symbol falls off the edges of
- * the container. The container's background colour matches the JPG so any
- * remaining edges blend invisibly into the host surface.
+ * Variants:
+ *  - 'color'  → native brand blue (default; use on white/light surfaces)
+ *  - 'white'  → all-white (use over dark / blue / hero surfaces)
+ *  - 'black'  → all-black (alt monochrome use)
  *
- * Variants available: 'white' | 'blue' | 'black' | 'grey'
+ * Components:
+ *  - <LogoMark />     — horizontal lockup (header / inline)
+ *  - <LogoLockup />   — vertical stacked lockup (hero / large brand moments)
+ *  - <LogoSymbol />   — symbol only (favicon-sized inline icon)
  */
-const VARIANT_TO_SRC = {
-  white: "/assets/logo-white-bg.jpg",
-  blue: "/assets/logo-blue-bg.jpg",
-  black: "/assets/logo-black-bg.jpg",
-  grey: "/assets/logo-grey-bg.jpg",
-};
 
-const VARIANT_BG_COLOR = {
-  white: "#ffffff",
-  blue: "#035FFE",
-  black: "#000000",
-  grey: "#C2C6C8",
-};
+const HORIZONTAL = "/assets/dpw-horizontal.svg";
+const VERTICAL = "/assets/dpw-vertical.svg";
 
-// Intrinsic aspect ratio of the "DA" mark (width / height).
-const MARK_ASPECT = 1.35;
+// Filter recipes that recolor a single-color SVG when loaded as an <img>.
+const FILTER = {
+  color: "none",
+  white: "brightness(0) invert(1)",
+  black: "brightness(0)",
+};
 
 export default function LogoMark({
-  variant = "white",
-  /** Target display HEIGHT in px (width is derived from the mark's aspect). */
+  variant = "color",
+  /** Display height in px. Width auto-scales by the SVG's intrinsic aspect (~4.84:1). */
   size = 40,
   className = "",
   alt = "Datapoolwaters Advisory",
 }) {
-  const src = VARIANT_TO_SRC[variant] || VARIANT_TO_SRC.white;
-  const bg = VARIANT_BG_COLOR[variant] || VARIANT_BG_COLOR.white;
-  const height = size;
-  const width = Math.round(size * MARK_ASPECT);
-
   return (
-    <span
-      className={`inline-block overflow-hidden shrink-0 ${className}`}
+    <img
+      src={HORIZONTAL}
+      alt={alt}
+      className={`shrink-0 ${className}`}
       style={{
-        width,
-        height,
-        backgroundColor: bg,
-        lineHeight: 0,
+        height: size,
+        width: "auto",
+        display: "block",
+        filter: FILTER[variant] || FILTER.color,
       }}
-      aria-hidden="true"
+      draggable={false}
       data-testid={`logo-mark-${variant}`}
-    >
-      <img
-        src={src}
-        alt={alt}
-        loading="eager"
-        decoding="async"
-        draggable={false}
-        style={{
-          // Render at full container size, preserving the mark's aspect via
-          // contain (so it never squishes). Then scale ~1.55× to push the
-          // uniform 25% padding off the edges of the container.
-          width: "100%",
-          height: "100%",
-          objectFit: "contain",
-          objectPosition: "center center",
-          display: "block",
-          transform: "scale(1.55)",
-          transformOrigin: "center center",
-        }}
-      />
-    </span>
+    />
   );
 }
 
-/** Full lockup (symbol-only, uncropped) — used for hero/large brand moments. */
 export function LogoLockup({
-  variant = "white",
-  height = 120,
+  variant = "color",
+  height = 160,
   className = "",
   alt = "Datapoolwaters Advisory",
 }) {
-  const src = VARIANT_TO_SRC[variant] || VARIANT_TO_SRC.white;
   return (
     <img
-      src={src}
+      src={VERTICAL}
       alt={alt}
       className={className}
-      style={{ height, width: "auto", display: "block" }}
+      style={{
+        height,
+        width: "auto",
+        display: "block",
+        filter: FILTER[variant] || FILTER.color,
+      }}
       draggable={false}
       data-testid={`logo-lockup-${variant}`}
     />
+  );
+}
+
+/** Symbol-only (uses the vertical lockup, cropped to its top portion via CSS). */
+export function LogoSymbol({
+  variant = "color",
+  size = 40,
+  className = "",
+}) {
+  // The vertical SVG is 600 × 426; the symbol occupies roughly the top 60%.
+  // We render that portion in a square container with overflow: hidden.
+  return (
+    <span
+      className={`inline-block overflow-hidden shrink-0 ${className}`}
+      style={{ width: size, height: size, lineHeight: 0 }}
+      aria-hidden="true"
+      data-testid={`logo-symbol-${variant}`}
+    >
+      <img
+        src={VERTICAL}
+        alt=""
+        style={{
+          // 600 × 426 source. Aspect ≈ 1.41. The mark sits in the top ~58%.
+          // Scale up so width = container width × (600/600)*ratio. Easiest:
+          // set width to size and height to size * (426/600 / 0.58) so the
+          // symbol fills the visible square.
+          width: size,
+          height: size * (426 / 600) / 0.58,
+          objectFit: "cover",
+          objectPosition: "top center",
+          display: "block",
+          filter: FILTER[variant] || FILTER.color,
+        }}
+        draggable={false}
+      />
+    </span>
   );
 }

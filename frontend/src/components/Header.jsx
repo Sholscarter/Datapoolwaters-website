@@ -44,31 +44,14 @@ export default function Header({ transparentOnHero = false }) {
       <div className="dpw-container flex items-center justify-between h-20">
         <Link
           to="/"
-          className="flex items-center gap-3 group"
+          className="flex items-center group"
           data-testid="nav-home-logo"
           aria-label="Datapoolwaters Advisory — Home"
         >
           <LogoMark
-            variant={transparent ? "black" : "white"}
-            size={44}
-            className={transparent ? "ring-0" : "ring-0"}
+            variant={transparent ? "white" : "color"}
+            size={36}
           />
-          <div className="flex flex-col leading-none">
-            <span
-              className={`font-serif text-[17px] leading-tight tracking-tight transition-colors ${
-                transparent ? "text-white" : "text-dpw-black"
-              }`}
-            >
-              Datapoolwaters
-            </span>
-            <span
-              className={`font-serif text-[17px] leading-tight tracking-tight transition-colors ${
-                transparent ? "text-white" : "text-dpw-black"
-              }`}
-            >
-              Advisory
-            </span>
-          </div>
         </Link>
 
         {/* Desktop nav */}
