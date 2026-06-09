@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FlowingLines from "../components/FlowingLines";
+import SEO from "../components/SEO";
 import { ArrowRight, Shield, FileText, Scale, Users, AlertTriangle } from "lucide-react";
 import { GOVERNANCE_STATEMENT, POLICIES } from "../data/policies";
 
@@ -17,6 +18,7 @@ export default function Governance() {
 
   return (
     <div data-testid="page-governance">
+      <SEO />
       {/* Hero */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-white overflow-hidden">
         <FlowingLines position="top-left" size={520} opacity={0.1} />

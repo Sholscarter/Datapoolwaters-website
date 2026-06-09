@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FlowingLines from "../components/FlowingLines";
+import SEO from "../components/SEO";
 import { ArrowRight } from "lucide-react";
 
 const VALUES = [
@@ -21,6 +22,7 @@ const APPROACH = [
 export default function WhoWeAre() {
   return (
     <div data-testid="page-who-we-are">
+      <SEO />
       {/* Page hero */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-white overflow-hidden">
         <FlowingLines position="top-right" size={520} opacity={0.1} />

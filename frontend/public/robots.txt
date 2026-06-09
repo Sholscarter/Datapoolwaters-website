@@ -1,0 +1,7 @@
+# https://www.datapoolwaters.com/robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+Sitemap: https://www.datapoolwaters.com/sitemap.xml

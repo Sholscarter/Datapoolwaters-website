@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FlowingLines from "../components/FlowingLines";
+import SEO from "../components/SEO";
 import { ArrowRight, Cpu, Database, Globe, ShieldCheck, BarChart3, Leaf } from "lucide-react";
 
 const BRUNO = [
@@ -20,6 +21,7 @@ const ECO = [
 export default function Innovation() {
   return (
     <div data-testid="page-innovation">
+      <SEO />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-white overflow-hidden">
         <FlowingLines position="top-left" size={520} opacity={0.1} />
         <div className="dpw-container relative">

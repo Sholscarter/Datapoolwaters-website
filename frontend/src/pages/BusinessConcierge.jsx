@@ -27,6 +27,7 @@ import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 import { toast, Toaster } from "sonner";
 import { trackEvent } from "../lib/analytics";
+import SEO from "../components/SEO";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -171,6 +172,7 @@ export default function BusinessConcierge() {
 
   return (
     <div className="bc-theme" data-testid="page-business-concierge">
+      <SEO />
       <Toaster position="top-right" richColors />
 
       <Hero onFree={scrollTo("bc-free")} onPaid={scrollTo("bc-paid")} />

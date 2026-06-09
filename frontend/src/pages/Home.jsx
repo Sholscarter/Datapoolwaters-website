@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import HeroCinematic from "../components/HeroCinematic";
 import FlowingLines from "../components/FlowingLines";
+import SEO from "../components/SEO";
 import { CASE_STUDIES } from "../data/caseStudies";
 import { INSIGHTS } from "../data/insights";
 import { ArrowRight, Search, FileText, TrendingUp } from "lucide-react";
@@ -11,6 +12,7 @@ export default function Home() {
 
   return (
     <div data-testid="page-home">
+      <SEO />
       <HeroCinematic />
 
       {/* ——————————————— Vision / Mission ——————————————— */}

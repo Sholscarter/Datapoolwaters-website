@@ -7,6 +7,7 @@ import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 import { toast, Toaster } from "sonner";
 import { trackEvent } from "../lib/analytics";
+import SEO from "../components/SEO";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -65,6 +66,7 @@ export default function Contact() {
 
   return (
     <div data-testid="page-contact">
+      <SEO />
       <Toaster position="top-right" richColors />
 
       <section className="relative pt-32 pb-12 md:pt-40 md:pb-20 bg-white overflow-hidden">

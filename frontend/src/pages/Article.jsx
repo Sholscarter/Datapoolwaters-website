@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import FlowingLines from "../components/FlowingLines";
+import SEO from "../components/SEO";
 import { INSIGHTS } from "../data/insights";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -26,6 +27,7 @@ export default function Article() {
 
   return (
     <article data-testid="page-article">
+      <SEO />
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-white overflow-hidden">
         <FlowingLines position="top-left" size={480} opacity={0.08} />
         <div className="dpw-container relative max-w-4xl">

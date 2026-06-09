@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import "@/App.css";
 import "@/index.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HelmetProvider, Helmet } from "react-helmet-async";
 import { initGA, trackPageview } from "./lib/analytics";
+import { SITE_URL, SITE_NAME, CORE_KEYWORDS } from "./data/seo";
 
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -47,11 +49,67 @@ export default function App() {
     initGA();
   }, []);
 
+  // Site-wide JSON-LD (Organization + WebSite). Lives once at the App root.
+  const siteSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        name: SITE_NAME,
+        legalName: "Datapoolwaters Advisory Limited",
+        url: SITE_URL,
+        logo: `${SITE_URL}/assets/dpw-horizontal.svg`,
+        description:
+          "Boutique investment and strategic financial advisory firm operating across Nigeria and Africa. Specialists in financial modelling, OBC/FBC business cases, ICRC-aligned PPP & concession advisory, fundraising, and capital structuring.",
+        sameAs: [
+          "https://www.linkedin.com/company/datapoolwaters/",
+          "https://twitter.com/datapoolwaters",
+          "https://instagram.com/datapoolwaters",
+        ],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: "+234 813 421 5663",
+            contactType: "customer support",
+            email: "advisory@datapoolwaters.com",
+            areaServed: ["NG", "Africa"],
+            availableLanguage: "en",
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Lagos",
+          addressCountry: "NG",
+        },
+        knowsAbout: CORE_KEYWORDS,
+        slogan: "Capital · Strategy · Sustainability",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: SITE_NAME,
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        inLanguage: "en",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${SITE_URL}/search?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        <ScrollToTop />
-        <AnalyticsRouteTracker />
+    <HelmetProvider>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(siteSchema)}</script>
+      </Helmet>
+      <div className="App">
+        <BrowserRouter>
+          <ScrollToTop />
+          <AnalyticsRouteTracker />
         <Routes>
           <Route
             path="/"
@@ -159,6 +217,7 @@ export default function App() {
           />
         </Routes>
       </BrowserRouter>
-    </div>
+      </div>
+    </HelmetProvider>
   );
 }

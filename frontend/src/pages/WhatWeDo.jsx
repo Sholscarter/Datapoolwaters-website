@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FlowingLines from "../components/FlowingLines";
+import SEO from "../components/SEO";
 import { ArrowRight, Check } from "lucide-react";
 import { CASE_STUDIES } from "../data/caseStudies";
 
@@ -95,6 +96,7 @@ export default function WhatWeDo() {
 
   return (
     <div data-testid="page-what-we-do">
+      <SEO />
       {/* Hero */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-white overflow-hidden">
         <FlowingLines position="top-left" size={520} opacity={0.1} />

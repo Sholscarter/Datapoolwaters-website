@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import FlowingLines from "../components/FlowingLines";
+import SEO from "../components/SEO";
 import { ArrowLeft, Mail } from "lucide-react";
 import { POLICIES } from "../data/policies";
 
@@ -102,6 +103,7 @@ export default function PolicyPage() {
 
   return (
     <article data-testid={`page-policy-${key}`}>
+      <SEO />
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-white overflow-hidden">
         <FlowingLines position="top-right" size={460} opacity={0.08} />
         <div className="dpw-container relative max-w-4xl">

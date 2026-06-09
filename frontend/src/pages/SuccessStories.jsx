@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import FlowingLines from "../components/FlowingLines";
+import SEO from "../components/SEO";
 import { CASE_STUDIES, CATEGORIES } from "../data/caseStudies";
 import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 
@@ -16,6 +17,7 @@ export default function SuccessStories() {
 
   return (
     <div data-testid="page-success-stories">
+      <SEO />
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-white overflow-hidden">
         <FlowingLines position="top-right" size={520} opacity={0.1} />
         <div className="dpw-container relative">
@@ -134,6 +136,7 @@ export function CaseStudyDetail() {
 
   return (
     <article data-testid="page-case-detail">
+      <SEO />
       {/* Cover */}
       <section className="relative h-[68vh] min-h-[480px] bg-black overflow-hidden">
         <img
