@@ -6,6 +6,7 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 import { toast, Toaster } from "sonner";
+import { trackEvent } from "../lib/analytics";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -37,6 +38,10 @@ export default function Contact() {
         message: form.message.trim(),
       };
       await axios.post(`${API}/contact`, payload);
+      trackEvent("contact_form_submit", {
+        form: "main_contact",
+        subject: payload.subject,
+      });
       toast.success("Thank you. We'll be in touch shortly.");
       setDone(true);
       setForm({

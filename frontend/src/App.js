@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "@/App.css";
 import "@/index.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { initGA, trackPageview } from "./lib/analytics";
 
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -29,11 +30,28 @@ function ScrollToTop() {
   return null;
 }
 
+function AnalyticsRouteTracker() {
+  const { pathname, search } = useLocation();
+  useEffect(() => {
+    // Defer to next tick so document.title is updated by the route's effects.
+    const t = setTimeout(() => {
+      trackPageview(pathname + search, document.title);
+    }, 50);
+    return () => clearTimeout(t);
+  }, [pathname, search]);
+  return null;
+}
+
 export default function App() {
+  useEffect(() => {
+    initGA();
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
         <ScrollToTop />
+        <AnalyticsRouteTracker />
         <Routes>
           <Route
             path="/"

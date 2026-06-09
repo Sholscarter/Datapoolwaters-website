@@ -26,6 +26,7 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 import { toast, Toaster } from "sonner";
+import { trackEvent } from "../lib/analytics";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -345,6 +346,7 @@ function FreeResources() {
         email: email.trim(),
         source: "business-concierge",
       });
+      trackEvent("newsletter_subscribe", { source: "business-concierge" });
       toast.success("You're on the list. Welcome.");
       setEmail("");
     } catch (err) {
@@ -494,6 +496,10 @@ function PaidStore() {
         phone: form.phone.trim() || null,
         notes: form.notes.trim() || null,
       });
+      trackEvent("purchase_intent", {
+        product: "20_businesses_guide",
+        currency: "NGN",
+      });
       setDone(true);
     } catch (err) {
       const msg = err?.response?.data?.detail?.[0]?.msg || "Try again shortly.";
@@ -596,6 +602,7 @@ function PaidStore() {
               </div>
               <button
                 onClick={() => {
+                  trackEvent("buy_now_click", { product: "20_businesses_guide" });
                   setDone(false);
                   setForm({ name: "", email: "", phone: "", notes: "" });
                   setModalOpen(true);
