@@ -249,7 +249,7 @@ function Hero({ onFree, onPaid }) {
             <FlowingLines position="bottom-right" size={420} color="#ffffff" opacity={0.18} />
             <div className="absolute inset-0 grid place-items-center">
               <img
-                src="/assets/concierge/bc-stacked.svg"
+                src="/assets/concierge/bc-stacked-white.svg"
                 alt="Datapoolwaters Business Concierge"
                 className="w-[58%]"
                 data-testid="bc-hero-mark"
