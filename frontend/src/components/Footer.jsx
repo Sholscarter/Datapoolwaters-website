@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import LogoMark from "./LogoMark";
 
 const GOVERNANCE = [
@@ -84,8 +84,7 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <Phone size={16} className="mt-0.5 text-dpw-blue" />
                 <div className="space-y-1">
-                  <div>+234 817 947 0589</div>
-                  <div>+234 803 609 7664</div>
+                  <div>+234 813 421 5663</div>
                   <div>+1 (646) 680 0923</div>
                 </div>
               </div>
@@ -146,7 +145,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-5">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/datapoolwaters/"
               target="_blank"
               rel="noreferrer"
               className="text-white/60 hover:text-white transition-colors"
@@ -156,7 +155,7 @@ export default function Footer() {
               <Linkedin size={18} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://twitter.com/datapoolwaters"
               target="_blank"
               rel="noreferrer"
               className="text-white/60 hover:text-white transition-colors"
@@ -166,14 +165,14 @@ export default function Footer() {
               <Twitter size={18} />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://instagram.com/datapoolwaters"
               target="_blank"
               rel="noreferrer"
               className="text-white/60 hover:text-white transition-colors"
-              aria-label="Facebook"
-              data-testid="social-facebook"
+              aria-label="Instagram"
+              data-testid="social-instagram"
             >
-              <Facebook size={18} />
+              <Instagram size={18} />
             </a>
           </div>
         </div>

@@ -124,8 +124,7 @@ export default function Contact() {
                     <div>
                       <div className="dpw-label text-white/60 mb-1.5">Phone</div>
                       <div className="text-[15px] space-y-1">
-                        <div>+234 817 947 0589</div>
-                        <div>+234 803 609 7664</div>
+                        <div>+234 813 421 5663</div>
                         <div>+1 (646) 680 0923</div>
                       </div>
                     </div>
