@@ -19,6 +19,7 @@ import Article from "./pages/Article";
 import PolicyPage from "./pages/PolicyPage";
 import Governance from "./pages/Governance";
 import BusinessConcierge from "./pages/BusinessConcierge";
+import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -212,6 +213,14 @@ export default function App() {
             element={
               <Layout>
                 <PolicyPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Layout>
+                <NotFound />
               </Layout>
             }
           />
