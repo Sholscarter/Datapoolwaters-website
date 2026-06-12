@@ -1,0 +1,12 @@
+backend/
+scripts/
+memory/
+tests/
+test_reports/
+.emergent/
+*.pdf
+__pycache__/
+*.pyc
+.pytest_cache/
+playwright-report/
+test-results/
