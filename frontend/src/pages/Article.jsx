@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import FlowingLines from "../components/FlowingLines";
 import SEO from "../components/SEO";
+import InsightCarousel from "../components/InsightCarousel";
 import { INSIGHTS } from "../data/insights";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -70,18 +71,22 @@ export default function Article() {
       <section className="py-16 md:py-24 bg-white">
         <div className="dpw-container max-w-3xl prose-dpw">
           <div className="space-y-7 text-[17px] leading-[1.8] text-dpw-dark-grey">
-            {a.body.map((blk, i) =>
-              typeof blk === "string" ? (
-                <p key={i}>{blk}</p>
-              ) : (
+            {a.body.map((blk, i) => {
+              if (typeof blk === "string") {
+                return <p key={i}>{blk}</p>;
+              }
+              if (blk.type === "carousel") {
+                return <InsightCarousel key={i} slides={blk.slides} />;
+              }
+              return (
                 <div key={i}>
                   <h2 className="font-serif text-2xl md:text-[30px] text-dpw-black mt-10 mb-4">
                     {blk.h}
                   </h2>
                   <p>{blk.p}</p>
                 </div>
-              )
-            )}
+              );
+            })}
           </div>
         </div>
       </section>
