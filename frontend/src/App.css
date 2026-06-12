@@ -4,3 +4,120 @@
   background: #ffffff;
   color: var(--dpw-black);
 }
+
+/* ——— Floating WhatsApp Button (sticky FAB) ——— */
+.dpw-whatsapp-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 9999px;
+  background: #25D366;
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35),
+    0 4px 12px rgba(0, 0, 0, 0.18);
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dpw-whatsapp-fab::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  background: rgba(37, 211, 102, 0.35);
+  z-index: -1;
+  animation: dpw-wa-pulse 2.2s ease-out infinite;
+}
+
+.dpw-whatsapp-fab:hover {
+  transform: translateY(-2px) scale(1.04);
+  background: #1ebe5b;
+  box-shadow: 0 18px 34px rgba(37, 211, 102, 0.45),
+    0 6px 14px rgba(0, 0, 0, 0.22);
+}
+
+.dpw-whatsapp-fab:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(11, 30, 63, 0.6),
+    0 18px 34px rgba(37, 211, 102, 0.45);
+}
+
+.dpw-whatsapp-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: #0B1E3F;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.dpw-whatsapp-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: #0B1E3F;
+}
+
+.dpw-whatsapp-fab:hover .dpw-whatsapp-tooltip,
+.dpw-whatsapp-fab:focus-visible .dpw-whatsapp-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+@keyframes dpw-wa-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  80% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .dpw-whatsapp-fab {
+    width: 54px;
+    height: 54px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .dpw-whatsapp-tooltip {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dpw-whatsapp-fab::before {
+    animation: none;
+  }
+  .dpw-whatsapp-fab {
+    transition: none;
+  }
+}
+
