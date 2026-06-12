@@ -27,9 +27,10 @@ import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 import { toast, Toaster } from "sonner";
 import { trackEvent } from "../lib/analytics";
+import { hasBackend, API_BASE, FALLBACK_EMAIL, CONCIERGE_EMAIL, openMailto } from "../lib/api";
 import SEO from "../components/SEO";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = API_BASE;
 
 // ─── PLACEHOLDERS — replace before launch ──────────────────────────────────
 const CONFIG = {
@@ -343,6 +344,20 @@ function FreeResources() {
     e.preventDefault();
     if (!email.trim()) return;
     setSubmitting(true);
+    // Mailto fallback when no backend is configured.
+    if (!hasBackend()) {
+      trackEvent("newsletter_subscribe", { source: "business-concierge", mode: "mailto" });
+      openMailto({
+        to: CONCIERGE_EMAIL,
+        subject: "Newsletter subscription request",
+        fields: { Email: email.trim() },
+        message: "Please add me to the Business Concierge newsletter.",
+      });
+      toast.success("Email client opened — hit send to confirm.");
+      setEmail("");
+      setSubmitting(false);
+      return;
+    }
     try {
       await axios.post(`${API}/newsletter/subscribe`, {
         email: email.trim(),
@@ -490,6 +505,30 @@ function PaidStore() {
   const submit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
+    // Mailto fallback when no backend is configured.
+    if (!hasBackend()) {
+      trackEvent("purchase_intent", {
+        product: "20_businesses_guide",
+        currency: "NGN",
+        mode: "mailto",
+      });
+      openMailto({
+        to: CONCIERGE_EMAIL,
+        subject: "Reserve — 20 Profitable Businesses Guide",
+        fields: {
+          Name: form.name.trim(),
+          Email: form.email.trim(),
+          Phone: form.phone.trim() || null,
+          Product: "20 Profitable Businesses Guide (₦6M–₦30M)",
+        },
+        message:
+          form.notes.trim() ||
+          "I'd like to reserve a copy of the guide. Please send payment instructions.",
+      });
+      setDone(true);
+      setSubmitting(false);
+      return;
+    }
     try {
       await axios.post(`${API}/purchase-intent`, {
         product: "20 Profitable Businesses Guide (₦6M–₦30M)",

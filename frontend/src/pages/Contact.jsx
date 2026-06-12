@@ -7,9 +7,10 @@ import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 import { toast, Toaster } from "sonner";
 import { trackEvent } from "../lib/analytics";
+import { hasBackend, API_BASE, FALLBACK_EMAIL, openMailto } from "../lib/api";
 import SEO from "../components/SEO";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = API_BASE;
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -29,15 +30,33 @@ export default function Contact() {
     e.preventDefault();
     if (submitting) return;
     setSubmitting(true);
+    const payload = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      organization: form.organization.trim() || null,
+      phone: form.phone.trim() || null,
+      subject: form.subject.trim(),
+      message: form.message.trim(),
+    };
+    // Mailto fallback when no backend is configured.
+    if (!hasBackend()) {
+      trackEvent("contact_form_submit", { form: "main_contact", mode: "mailto" });
+      openMailto({
+        to: FALLBACK_EMAIL,
+        subject: `Website enquiry — ${payload.subject}`,
+        fields: {
+          Name: payload.name,
+          Email: payload.email,
+          Organization: payload.organization,
+          Phone: payload.phone,
+        },
+        message: payload.message,
+      });
+      setDone(true);
+      setSubmitting(false);
+      return;
+    }
     try {
-      const payload = {
-        name: form.name.trim(),
-        email: form.email.trim(),
-        organization: form.organization.trim() || null,
-        phone: form.phone.trim() || null,
-        subject: form.subject.trim(),
-        message: form.message.trim(),
-      };
       await axios.post(`${API}/contact`, payload);
       trackEvent("contact_form_submit", {
         form: "main_contact",
