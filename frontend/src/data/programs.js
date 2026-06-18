@@ -1,15 +1,17 @@
 // Datapoolwaters Academy — Programmes catalogue.
-// Add new programmes by prepending to this array (newest/most prominent first).
+// To add a new programme, prepend an object to this array. The Academy listing
+// page and the per-programme detail page (/academy/:slug) read from this file.
 
 export const PROGRAMS = [
   {
     slug: "pe-vc-sustainable-investment-valuation",
     name: "Private Equity, Venture Capital & Sustainable Investment Valuation Programme",
+    shortName: "PE, VC & Sustainable Investment Valuation",
     tagline:
-      "Master the Art of Valuation, Climate Risk Integration, and Sustainable Investing in Private Markets.",
-    duration: "8 Weeks",
-    format: "Executive Programme",
-    deliveryMode: "Live Virtual Sessions + Self-Paced Materials",
+      "Master the art of valuation, climate risk integration, and sustainable investing in private markets.",
+    duration: "2 Weekends",
+    format: "Hands-On Programme",
+    deliveryMode: "In-person, practitioner-led sessions with applied case work.",
     cohorts: [
       { label: "Cohort 1", schedule: "April Intake (Annually)" },
       { label: "Cohort 2", schedule: "October Intake (Annually)" },
@@ -17,8 +19,8 @@ export const PROGRAMS = [
     certification:
       "Datapoolwaters Academy Professional Certificate in Private Equity, Venture Capital & Sustainable Investment Valuation.",
     overview: [
-      "The Private Equity, Venture Capital & Sustainable Investment Valuation Programme is a practical, executive-level training designed for finance professionals, investment analysts, fund managers, startup founders, development finance practitioners, sustainability professionals, corporate finance executives, and institutional investors seeking to develop world-class capabilities in investment valuation and sustainable capital allocation.",
-      "The programme combines traditional valuation methodologies with emerging sustainability, climate risk, ESG, and impact investing frameworks to equip participants with the skills required to evaluate investment opportunities in today's evolving capital markets.",
+      "A practical, hands-on programme designed for finance professionals, investment analysts, fund managers, startup founders, development finance practitioners, sustainability professionals, corporate finance teams, and institutional investors seeking to build world-class capabilities in investment valuation and sustainable capital allocation.",
+      "The programme combines traditional valuation methodologies with emerging sustainability, climate risk, ESG, and impact investing frameworks — equipping participants with the skills required to evaluate investment opportunities in today's evolving capital markets.",
       "Participants will learn how professional investors assess businesses, infrastructure projects, startups, climate-focused ventures, and impact investments while incorporating sustainability-related risks and opportunities into investment decisions.",
     ],
     objectives: [
@@ -57,6 +59,8 @@ export const PROGRAMS = [
     outcomes:
       "Upon completion, participants will possess practical skills to evaluate investment opportunities, integrate sustainability considerations into valuation models, assess climate-related financial risks, and make informed capital allocation decisions in private and public markets.",
     cta: "Join the next cohort and gain the analytical skills used by leading Private Equity firms, Venture Capital funds, Development Finance Institutions, and Sustainable Investment Managers worldwide.",
-    featured: true,
   },
 ];
+
+export const getProgramBySlug = (slug) =>
+  PROGRAMS.find((p) => p.slug === slug) || null;

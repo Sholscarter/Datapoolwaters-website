@@ -19,6 +19,7 @@ import Article from "./pages/Article";
 import PolicyPage from "./pages/PolicyPage";
 import Governance from "./pages/Governance";
 import BusinessConcierge from "./pages/BusinessConcierge";
+import ProgramDetail from "./pages/ProgramDetail";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -157,6 +158,14 @@ export default function App() {
             element={
               <Layout>
                 <Academy />
+              </Layout>
+            }
+          />
+          <Route
+            path="/academy/:slug"
+            element={
+              <Layout>
+                <ProgramDetail />
               </Layout>
             }
           />
